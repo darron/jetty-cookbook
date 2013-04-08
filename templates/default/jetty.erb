@@ -1,0 +1,6 @@
+JAVA_HOME=<%= @java_path %> # Path to Java
+NO_START=0 # Start on boot
+JETTY_HOST=0.0.0.0 # Listen to all hosts
+JETTY_PORT=<%= @jetty_listen_ports %> # Run on this port
+JETTY_USER=<%= @jetty_user %> # Run as this user
+JAVA_OPTIONS="-Dsolr.solr.home=<%= @solr_path %> $JAVA_OPTIONS"
