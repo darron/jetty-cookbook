@@ -12,14 +12,3 @@ include_recipe "java::default"
 
 # Install the Jetty Server
 include_recipe "jetty::server"
-
-# Open Port 8080.
-firewall "ufw" do
-  action :enable
-end
-
-firewall_rule "http" do
-  port 8080
-  action :allow
-  notifies :enable, "firewall[ufw]"
-end
