@@ -1,3 +1,8 @@
+#
+# Cookbook Name:: jetty
+# Recipe:: server
+#
+
 # Install Jetty.
 user node[:jetty][:user] do
   comment "Jetty User"
