@@ -15,12 +15,12 @@ describe 'jetty::default' do
   end
   
   it "creates a user for the daemon to run as" do
-    user("jetty").must_exist
+    user(node[:jetty][:user]).must_exist
   end
   
   it "creates the jetty directory" do
-    directory("/opt/jetty").must_exist.with(:owner, "jetty")
-    assert_directory "/opt/jetty", "jetty", "root", 0755
+    directory(node[:jetty][:path]).must_exist.with(:owner, node[:jetty][:user])
+    assert_directory "#{node[:jetty][:path]}", "#{node[:jetty][:user]}", "root", 0755
   end
   
   it "creates a jetty init script" do
